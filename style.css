@@ -1,4 +1,5 @@
 header{
-    background: url("head.jpg");
+    background-image: url('head.jpg');
+    background-repeat: no-repeat;
     background-position: center center;
 }

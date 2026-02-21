@@ -1,0 +1,11 @@
+{
+    "name": "mahamadou/bootstrap",
+    "autoload": {
+        "psr-4": {
+            "Mahamadou\\Bootstrap\\": "src/"
+        }
+    },
+    "require": {
+        "mongodb/mongodb": "^2.2"
+    }
+}
