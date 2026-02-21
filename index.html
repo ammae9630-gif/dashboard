@@ -1,36 +1,4 @@
-<?php
-require 'vendor/autoload.php';
-
-if ($_SERVER["REQUEST_METHOD"] ==="POST") {
-
-  $emil = $POST['email'] ?? '';
-  $mot_de_passe = $POST['mot_de_passe'] ?? '';
-
-  if (empty($email) || empty($mot_de_passe)) {
-    die("Tous les champs sont obligatoires");
-  }
-
-  $mot_de_passe = password_hash($mot_de_passe, PASSWORD_DEFAULT);
-  
-  $client = new MongoDB\Client("mongodb://localhost:27017");
-
-  $collection = $client->ecole->login;
-
-  $result = $collection->insertOne([
-    'email' => $email,
-    'mot_de_passe' => $mot_de_passe,
-
-  ]);
-
-  if ($result->getinsertedID()) {
-    echo "Utilisateur enregistrer avec squccès",
-  } else {
-    echo "Erreur lors de l'enregistrement",
-  }
-}
-?>
-
-</head><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
